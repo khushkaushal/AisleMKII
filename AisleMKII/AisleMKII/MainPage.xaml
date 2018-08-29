@@ -5,10 +5,18 @@
              x:Class="AisleMKII.MainPage">
 
     <StackLayout>
-        <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
+        <SearchBar x:Name="searchBox" TextChanged="searchBox_TextChanged"/>
+        <ListView ItemsSource="{Binding .}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ImageCell
+                        Text="{Binding Name}"
+                        Detail="{Binding Aisle}"
+                        TextColor="#f35e20"
+                        DetailColor="#503026"/>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
     </StackLayout>
 
 </ContentPage>
